@@ -28,11 +28,3 @@ close(f)
 % hold off;
 
 % imwrite(temp_a*255, ['figure/', num2str(be_x), '_', num2str(be_z), '.bmp'], 'bmp')
-%{
-figure(1)
-imshow(flipud(tool)*255)
-hold off;
-figure(2)
-imshow(drill(1:drill_h, 1:drill_l)*255)
-hold off;
-%}
