@@ -1,6 +1,6 @@
 % cur_tool
 fprintf('--------- Cutting tool...\n')
-cur_t_x = 10*ele_w - (min_tool_z - be_z) + 1;
+cur_t_x = tool_h/2 - (min_tool_z - be_z) + 1;
 if (min_tool_x < be_x)
     cur_t_y = be_x - min_tool_x;
 else
@@ -16,7 +16,7 @@ end
 
 % cut_drill
 fprintf('--------- Cutting drill...\n')
-cur_d_x = min_drill_z - 10*ele_w;
+cur_d_x = min_drill_z - tool_h/2;
 cur_d_y = min_drill_x;
 
 for i = max((cur_d_x - ele_range_d), 1):min((cur_d_x + ele_range_d), drill_h)
