@@ -9,11 +9,10 @@ max_eft_set_num = 0;
 d = zeros(range_z2 - range_z1 + 1, range_x2 - range_x1 + 1);
 % -- define the starting range points
 
-range_z1_s = range_z1 + round(tool_h/4);
-range_x1_s = range_x1;
+range_z1_s = range_z1 + round(tool_h/8);
 % -- end of definition
 for i = range_z1_s:range_z2
-    for j = range_x1_s:range_x2
+    for j = range_x1:range_x2
         if (comb(i, j) == 1)
             % -- Left and top positions
             if (bound_jdg(i, j, range_z1 + 1, range_z2, range_x1 + 1, range_x2) == 0)
@@ -148,12 +147,12 @@ min_drill_z = start_z;
 min_drill_x = start_x;
 
 % -- Change to one-sided
-if (min_tool_x < be_x)
-    fprintf('------ Electrode at the other side, reversed it.\n')
-    min_tool_x = 2 * be_x - min_tool_x - 1;
-end
+% if (min_tool_x < be_x)
+%     fprintf('------ Electrode at the other side, reversed it.\n')
+%     min_tool_x = 2 * be_x - min_tool_x - 1;
+% end
+
 % -- End change
-min_now = (min_tool_z - min_drill_z)^2 + (min_tool_x - min_drill_x)^2;
 if (max_eft >= vol_thre^2)
     fprintf('------ Electric field beyond threshold, legal to remove.\n')
     fprintf('------ Max voltage: %.2f / Threshold: %.2f\n', sqrt(max_eft), vol_thre)

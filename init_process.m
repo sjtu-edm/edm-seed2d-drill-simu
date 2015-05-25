@@ -8,7 +8,8 @@ comp_x = round((comp_ve * pi() * (2 * tool_w)^2 * ta / (4 * ratio^3 * Hw * (Hw -
 init_d = Hw + 10 / unit_size;
 poss_down = 0;
 % global tool;
-tool = uint8(zeros(tool_h, tool_w));                     % tool 0-1 matrix with int8
+tool = uint8(zeros(tool_h, 2*tool_w));                     % tool 0-1 matrix with int8
+stat_cot = zeros(1, 2*tool_w);                             % counter of sparking positions
 tool(1:round(ele_w/2), :) = 1;
 % tool(1:tool_h, 1:round(tool_w/5)) = 1;
 % global drill;

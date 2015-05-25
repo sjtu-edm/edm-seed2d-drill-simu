@@ -1,11 +1,12 @@
 % cur_tool
 fprintf('--------- Cutting tool...\n')
 cur_t_x = tool_h/2 - (min_tool_z - be_z) + 1;
-if (min_tool_x < be_x)
-    cur_t_y = be_x - min_tool_x;
-else
-    cur_t_y = min_tool_x - be_x  + 1;
-end
+% if (min_tool_x < be_x)
+%     cur_t_y = be_x - min_tool_x;
+% else
+%     cur_t_y = min_tool_x - be_x  + 1;
+% end
+cur_t_y = min_tool_x + (tool_w + 1) - be_x;
 
 for i = max((cur_t_x - ele_range_t), 1):min((cur_t_x + ele_range_t), tool_h)
     ele_range_t_y = round(sqrt(ele_range_t^2 - (i - cur_t_x)^2));
