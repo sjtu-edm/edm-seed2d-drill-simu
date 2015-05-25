@@ -15,10 +15,6 @@ range_x1_s = range_x1;
 for i = range_z1_s:range_z2
     for j = range_x1_s:range_x2
         if (comb(i, j) == 1)
-            if (j < be_x)
-                continue;
-            end
-            
             % -- Left and top positions
             if (bound_jdg(i, j, range_z1 + 1, range_z2, range_x1 + 1, range_x2) == 0)
                 continue;

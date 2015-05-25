@@ -16,7 +16,7 @@ drill = uint8(zeros(drill_h, drill_l));                     % drill 0-1 matrix w
 % drill(1:(init_d + init_w), 1:(2 * tool_w + init_w)) = 1;    % initial processing
 % drill(1:(init_d + init_w), (tool_w - round(tool_w/5) + init_w):(tool_w + round(tool_w/5) - init_w)) = 0;
 % global be_x;
-be_x = 2 * tool_w + 1;                                               % x-axis beginning location on drill
+be_x = drill_l/2+1;                                               % x-axis beginning location on drill
 % global be_z;
 be_z = 1;                                          % z-axis beginning location on drill
 down_m = zeros(floor(drill_l * 2 / comp_x));

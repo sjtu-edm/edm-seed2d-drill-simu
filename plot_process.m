@@ -6,7 +6,7 @@ temp_a((tool_h/2)+1:(drill_h + tool_h/2), :) = drill;
 flptl = flipud(tool(1:tool_h/2, 1:tool_w));
 flptl1 = [fliplr(flptl) flptl];
 temp_a((be_z+1):(be_z+tool_h/2), (be_x - tool_w):(be_x+tool_w-1)) = flptl1 & temp_a((be_z+1):(be_z+tool_h/2), (be_x-tool_w):(be_x+tool_w-1));
-% figure(2*st-1)
+figure(2 * st)
 % imshow(temp_a*255)
 imwrite(temp_a*255, ['figure/Tool_wear/', num2str(be_x), '_', num2str(be_z), '_', num2str(st), '.bmp'], 'bmp')
 % hold off;
@@ -20,7 +20,7 @@ for di = range_z1:range_z2
     end
 end
 % Save imagesc w/ popping out window, not a virus
-f = figure(st);
+f = figure(2 * st-1);
 imagesc(d)
 colorbar
 saveas(f, ['figure/Electric_field/', num2str(be_x), '_', num2str(be_z), '_', num2str(st), '.bmp'], 'bmp')
